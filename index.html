@@ -1,2 +1,175 @@
-<h1>Olá
-</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor na Brasa - Cardápio Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1>Sabor na Brasa</h1>
+            <nav class="main-nav">
+                <a href="#" onclick="showTab('burgers')">Hambúrgueres</a>
+                <a href="#" onclick="showTab('sides')">Acompanhamentos</a>
+                <a href="#" onclick="showTab('drinks')">Bebidas</a>
+                <a href="#" onclick="showTab('desserts')">Sobremesas</a>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="menu-section">
+        <div class="container">
+            <div id="burgers" class="tab-content active">
+                <h2>Hambúrgueres Artesanais</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/burger1.jpg" alt="Classic Burger">
+                        <h3>O Clássico Brasa</h3>
+                        <p>Pão brioche, hambúrguer Angus 180g, queijo cheddar, alface crocante, tomate fresco, cebola roxa e nossa maionese defumada.</p>
+                        <span class="price">R$ 29,90</span>
+                        <button class="add-to-cart-btn" data-id="burger1" data-name="O Clássico Brasa" data-price="29.90">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/burger2.jpg" alt="Crispy Bacon Burger">
+                        <h3>Crispy Bacon Burger</h3>
+                        <p>Pão australiano, hambúrguer Angus 180g, queijo prato, fatias generosas de bacon crocante, cebola caramelizada e molho barbecue artesanal.</p>
+                        <span class="price">R$ 34,90</span>
+                        <button class="add-to-cart-btn" data-id="burger2" data-name="Crispy Bacon Burger" data-price="34.90">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/burger3.jpg" alt="Smoked House Burger">
+                        <h3>Smoked House</h3>
+                        <p>Pão de pimenta biquinho, dois hambúrgueres Angus 120g, queijo Monterey Jack, molho especial da casa com picles, e rúcula.</p>
+                        <span class="price">R$ 39,90</span>
+                        <button class="add-to-cart-btn" data-id="burger3" data-name="Smoked House" data-price="39.90">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/burger4.jpg" alt="Cheddar Lovers">
+                        <h3>Cheddar Lovers</h3>
+                        <p>Pão de gergelim, hambúrguer de costela 200g, queijo cheddar cremoso (muito cheddar!), crispy de cebola e geleia de bacon.</p>
+                        <span class="price">R$ 36,90</span>
+                        <button class="add-to-cart-btn" data-id="burger4" data-name="Cheddar Lovers" data-price="36.90">Adicionar</button>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/burger5.jpg" alt="Veggie Delight">
+                        <h3>Veggie Delight</h3>
+                        <p>Pão integral, hambúrguer de cogumelos e lentilha, queijo coalho grelhado (opcional), rúcula, tomate cereja e pesto de manjericão.</p>
+                        <span class="price">R$ 32,90</span>
+                        <button class="add-to-cart-btn" data-id="burger5" data-name="Veggie Delight" data-price="32.90">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sides" class="tab-content">
+                <h2>Acompanhamentos</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/fries.jpg" alt="Batata Frita Rústica">
+                        <h3>Batata Frita Rústica</h3>
+                        <p>Batatas selecionadas, corte rústico, crocantes por fora e macias por dentro. Porção individual.</p>
+                        <span class="price">R$ 15,00</span>
+                        <button class="add-to-cart-btn" data-id="fries" data-name="Batata Frita Rústica" data-price="15.00">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/onion_rings.jpg" alt="Onion Rings">
+                        <h3>Onion Rings</h3>
+                        <p>Anéis de cebola empanados e fritos, sequinhos e crocantes. Acompanha molho barbecue.</p>
+                        <span class="price">R$ 18,00</span>
+                        <button class="add-to-cart-btn" data-id="onion_rings" data-name="Onion Rings" data-price="18.00">Adicionar</button>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/chicken_strips.jpg" alt="Chicken Strips">
+                        <h3>Chicken Strips</h3>
+                        <p>Tiras de frango empanadas e fritas, acompanhadas de molho honey mustard.</p>
+                        <span class="price">R$ 22,00</span>
+                        <button class="add-to-cart-btn" data-id="chicken_strips" data-name="Chicken Strips" data-price="22.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="drinks" class="tab-content">
+                <h2>Bebidas Refrescantes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/drink1.jpg" alt="Refrigerante">
+                        <h3>Refrigerante Lata</h3>
+                        <p>Coca-Cola, Guaraná Antártica, Sprite, Fanta Laranja. (350ml)</p>
+                        <span class="price">R$ 8,00</span>
+                        <button class="add-to-cart-btn" data-id="soda" data-name="Refrigerante Lata" data-price="8.00">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/drink2.jpg" alt="Suco Natural">
+                        <h3>Suco Natural do Dia</h3>
+                        <p>Sabores frescos: Laranja, Limonada Suíça, Abacaxi com Hortelã. (400ml)</p>
+                        <span class="price">R$ 12,00</span>
+                        <button class="add-to-cart-btn" data-id="juice" data-name="Suco Natural do Dia" data-price="12.00">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/milkshake.jpg" alt="Milkshake Cremoso">
+                        <h3>Milkshake Cremoso</h3>
+                        <p>Chocolate, Morango, Baunilha ou Ovomaltine. Deliciosamente gelado! (500ml)</p>
+                        <span class="price">R$ 20,00</span>
+                        <button class="add-to-cart-btn" data-id="milkshake" data-name="Milkshake Cremoso" data-price="20.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="desserts" class="tab-content">
+                <h2>Sobremesas Especiais</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/dessert1.jpg" alt="Petit Gâteau">
+                        <h3>Petit Gâteau com Sorvete</h3>
+                        <p>Bolo quente de chocolate com recheio cremoso, acompanhado de uma bola de sorvete de creme.</p>
+                        <span class="price">R$ 25,00</span>
+                        <button class="add-to-cart-btn" data-id="petitgateau" data-name="Petit Gâteau com Sorvete" data-price="25.00">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/dessert2.jpg" alt="Brownie com Calda">
+                        <h3>Brownie com Calda de Doce de Leite</h3>
+                        <p>Brownie úmido e fudgy, servido com calda quente de doce de leite e crocante de amêndoas.</p>
+                        <span class="price">R$ 22,00</span>
+                        <button class="add-to-cart-btn" data-id="brownie" data-name="Brownie com Calda de Doce de Leite" data-price="22.00">Adicionar</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="imagem/churrosart.jpg" alt="Churros Artesanais">
+                        <h3>Churros Artesanais</h3>
+                        <p>Porção de mini churros crocantes, polvilhados com açúcar e canela, acompanhados de doce de leite ou chocolate.</p>
+                        <span class="price">R$ 18,00</span>
+                        <button class="add-to-cart-btn" data-id="churros" data-name="Churros Artesanais" data-price="18.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h3>Seu Pedido <i class="fas fa-times close-cart-btn" onclick="toggleCart()"></i></h3>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-summary">
+            <p>Total: <span id="cart-total">R$ 0,00</span></p>
+            <button class="checkout-btn">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2023 Sabor na Brasa Hamburgueria. Todos os direitos reservados.</p>
+            <p>Localizada em Morrinhos, Goiás, Brasil.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
